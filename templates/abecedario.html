@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abecedario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+    <header>
+        <button class="back-btn" onclick="window.history.back()">←</button>
+        <h1>Abecedario</h1>
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+    </header>
+    <main>
+        <p>Contenido del Abecedario aquí.</p>
+    </main>
+    <footer>
+        <p>Curiosamente - Elaborado para el curso de Interacción Humano Computador</p>
+    </footer>
+</body>
+</html>

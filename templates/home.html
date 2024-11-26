@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Curiosamente</title>
+    <title>Curiosamente - Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
 <body>
-    <header class="header">
-        <button class="back-btn" onclick="window.history.back()">&larr;</button>
-        <span class="title">Curiosamente</span>
+    <header>
+        <button class="back-btn" onclick="window.history.back()">←</button>
+        <h1>Curiosamente</h1>
         <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
     </header>
 
-    <main class="content">
-        <div class="grid">
-            <a href="/abeceedario" class="card">Abeceedario</a>
-            <a href="/numeros" class="card">Números</a>
-            <a href="/pronombres" class="card">Pronombres</a>
-            <a href="/frutas" class="card">Frutas</a>
-            <a href="/animales" class="card">Animales</a>
-            <a href="/alimentos" class="card">Alimentos</a>
-            <a href="/vegetales" class="card">Vegetales</a>
-            <a href="/colores" class="card">Colores</a>
-            <a href="/insectos" class="card">Insectos</a>
-            <a href="/bebidas" class="card">Bebidas</a>
+    <main>
+        <div class="card-grid">
+            <a href="{{ url_for('category', category='abecedario') }}" class="card">Abecedario</a>
+            <a href="{{ url_for('category', category='numeros') }}" class="card">Números</a>
+            <a href="{{ url_for('category', category='pronombres') }}" class="card">Pronombres</a>
+            <a href="{{ url_for('category', category='frutas') }}" class="card">Frutas</a>
+            <a href="{{ url_for('category', category='animales') }}" class="card">Animales</a>
+            <a href="{{ url_for('category', category='alimentos') }}" class="card">Alimentos</a>
+            <a href="{{ url_for('category', category='vegetales') }}" class="card">Vegetales</a>
+            <a href="{{ url_for('category', category='colores') }}" class="card">Colores</a>
+            <a href="{{ url_for('category', category='insectos') }}" class="card">Insectos</a>
+            <a href="{{ url_for('category', category='bebidas') }}" class="card">Bebidas</a>
         </div>
     </main>
 
-    <footer class="footer">
-        Curiosamente elaborado para el curso de Interacción Humano Computador
+    <footer>
+        <p>Curiosamente - Elaborado para el curso de Interacción Humano Computador</p>
     </footer>
 </body>
 </html>
