@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abecedario</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/abecedario.css') }}">
 </head>
 <body>
     <header>
@@ -12,9 +12,20 @@
         <h1>Abecedario</h1>
         <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
     </header>
+
     <main>
-        <p>Contenido del Abecedario aquí.</p>
+        <div class="card-grid">
+            {% for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" %}
+            <div class="card">
+                <div class="large-letter">{{ letter }}</div>
+                <div class="small-letter">
+                    {{ letter }} - {{ letter.lower() }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </main>
+
     <footer>
         <p>Curiosamente - Elaborado para el curso de Interacción Humano Computador</p>
     </footer>
