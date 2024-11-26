@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/colores.css') }}">
+</head>
+<body>
+    <header>
+        <button class="back-btn" onclick="window.history.back()">←</button>
+        <h1>Colores</h1>
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+    </header>
+
+    <main>
+        <div class="color-cards">
+            <div class="card">
+                <div class="color-circle" style="background-color: red;"></div>
+                <h3>Rojo</h3>
+            </div>
+            <div class="card">
+                <div class="color-circle" style="background-color: blue;"></div>
+                <h3>Azul</h3>
+            </div>
+            <div class="card">
+                <div class="color-circle" style="background-color: yellow;"></div>
+                <h3>Amarillo</h3>
+            </div>
+            <div class="card">
+                <div class="color-circle" style="background-color: orange;"></div>
+                <h3>Naranja</h3>
+            </div>
+            <div class="card">
+                <div class="color-circle" style="background-color: green;"></div>
+                <h3>Verde</h3>
+            </div>
+            <div class="card">
+                <div class="color-circle" style="background-color: purple;"></div>
+                <h3>Púrpura</h3>
+            </div>
+            <div class="card">
+                <div class="color-circle" style="background-color: pink;"></div>
+                <h3>Rosa</h3>
+            </div>
+            <div class="card">
+                <div class="color-circle" style="background-color: brown;"></div>
+                <h3>Marrón</h3>
+            </div>
+            <div class="card">
+                <div class="color-circle" style="background-color: cyan;"></div>
+                <h3>Cian</h3>
+            </div>
+            <div class="card">
+                <div class="color-circle" style="background-color: lime;"></div>
+                <h3>Lima</h3>
+            </div>
+            <div class="card">
+                <div class="color-circle" style="background-color: gray;"></div>
+                <h3>Gris</h3>
+            </div>
+            <div class="card">
+                <div class="color-circle" style="background-color: beige;"></div>
+                <h3>Beige</h3>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Curiosamente - Elaborado para el curso de Interacción Humano Computador</p>
+    </footer>
+</body>
+</html>
