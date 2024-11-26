@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/frutas.css') }}">
+</head>
+<body>
+    <header>
+        <button class="back-btn" onclick="window.history.back()">←</button>
+        <h1>Frutas</h1>
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+    </header>
+
+    <main>
+        <div class="card-grid">
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Apple_Logo_2023.svg/1024px-Apple_Logo_2023.svg.png" alt="Manzana">
+                <h3>Manzana</h3>
+            </div>
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Banana_transparent.png" alt="Banana">
+                <h3>Banana</h3>
+            </div>
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Strawberry_Logo_2023.svg" alt="Fresa">
+                <h3>Fresa</h3>
+            </div>
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Orange-Whole.svg" alt="Naranja">
+                <h3>Naranja</h3>
+            </div>
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Watermelon-Transparent.png" alt="Sandía">
+                <h3>Sandía</h3>
+            </div>
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Pineapple_transparent.png" alt="Piña">
+                <h3>Piña</h3>
+            </div>
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Grape_Fruit_Logo.svg" alt="Uva">
+                <h3>Uva</h3>
+            </div>
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Peach-Transparent.png" alt="Durazno">
+                <h3>Durazno</h3>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Curiosamente - Elaborado para el curso de Interacción Humano Computador</p>
+    </footer>
+</body>
+</html>
