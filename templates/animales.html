@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animales</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animales.css') }}">
+</head>
+<body>
+    <header>
+        <button class="back-btn" onclick="window.history.back()">←</button>
+        <h1>Animales</h1>
+    </header>
+
+    <main>
+        <div class="card-grid">
+            {% for animal in ["caballo", "chancho", "conejo", "gallina", "gato", "leon", "mono", "perro", "pez", "pajaro", "raton", "tortuga"] %}
+            <a href="{{ url_for('mostrar_animal', animal=animal) }}" class="card-link">
+                <div class="card">
+                    <div class="large-animal">{{ animal | capitalize }}</div>
+                    <div class="small-animal">
+                        {{ animal }} - {{ animal.lower() }}
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Animales</p>
+    </footer>
+</body>
+</html>

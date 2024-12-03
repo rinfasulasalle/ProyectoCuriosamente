@@ -1,13 +1,11 @@
-/* General Styles */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Comic Sans MS', Arial, sans-serif;
-    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
     color: #333;
 }
 
-/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -27,8 +25,7 @@ header .back-btn {
 
 header h1 {
     margin: 0;
-    font-size: 1.8em;
-    color: #00509e;
+    font-size: 1.5em;
 }
 
 header .logo {
@@ -36,62 +33,47 @@ header .logo {
     width: auto;
 }
 
-/* Main Content */
-.section {
-    margin: 20px;
-}
-
-.section-title {
-    font-size: 1.8em;
-    text-align: center;
-    margin-bottom: 10px;
-    color: #ff5722;
+main {
+    padding: 20px;
 }
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
-    justify-items: center;
 }
 
 .card {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    width: 100px;
-    height: 100px;
     background-color: #fff;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-size: 1.5em;
-    color: #333;
+    transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.1);
-    background-color: #f7d528;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Animations for Intuitive Interaction */
-.card {
-    animation: float 3s ease-in-out infinite;
+.large-pronombre {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f7d528;
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+.small-pronombre {
+    font-size: 1.5em;
+    color: #555;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 10px;

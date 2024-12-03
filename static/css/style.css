@@ -1,26 +1,70 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Bubblegum Sans', cursive;
+    background-color: #f7d528;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f7d528;
-    font-family: Arial, sans-serif;
+    overflow: hidden;
 }
 
 .container {
     text-align: center;
-    color: #333;
+    animation: fadeIn 2s ease-in-out;
 }
 
-h1 {
-    font-size: 2.5em;
-    margin: 0;
+.animated-title {
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px #ff8a00;
+    animation: bounceIn 2s infinite alternate ease-in-out;
 }
 
-p {
-    font-size: 1.2em;
-    margin-top: 10px;
-    color: #555;
+.logo {
+    width: 200px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: spinLogo 5s linear infinite;
+}
+
+.animated-text {
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px #ff8a00;
+    animation: slideUp 2s ease-in-out;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes spinLogo {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+body:hover .animated-title {
+    color: #ff8a00;
+    text-shadow: 2px 2px 5px #ffffff;
+}
+
+body:hover .animated-text {
+    color: #ff8a00;
 }

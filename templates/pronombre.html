@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pronombre }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pronombre.css') }}">
+</head>
+<body>
+    <header>
+        <button class="back-btn" onclick="window.history.back()">←</button>
+        <h1>{{ pronombre }}</h1>
+    </header>
+
+    <main>
+        <div class="pronombre-container">
+            <div class="large-pronombre">{{ pronombre }}</div>
+            
+            <!-- Video relacionado con el pronombre -->
+            <div class="video-container">
+                <video id="pronombre-video" autoplay muted loop>
+                    <source src="{{ url_for('static', filename='videos/' + pronombre + '-gesture.mp4') }}" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+
+            <!-- Botón para reproducir el sonido del pronombre -->
+            <button id="sound-btn">
+                <img src="{{ url_for('static', filename='images/soundpicture.png') }}" alt="Reproducir sonido">
+            </button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Curiosamente - Elaborado para el curso de Interacción Humano Computador</p>
+    </footer>
+</body>
+</html>

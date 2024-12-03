@@ -14,36 +14,17 @@
     </header>
 
     <main>
-        <div class="section">
-            <h2 class="section-title">Primera Persona</h2>
-            <div class="card-grid">
-                <div class="card">Yo</div>
-                <div class="card">Nosotros</div>
-                <div class="card">Nosotras</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Segunda Persona</h2>
-            <div class="card-grid">
-                <div class="card">Tú</div>
-                <div class="card">Vos</div>
-                <div class="card">Usted</div>
-                <div class="card">Ustedes</div>
-                <div class="card">Vosotros</div>
-                <div class="card">Vosotras</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Tercera Persona</h2>
-            <div class="card-grid">
-                <div class="card">Él</div>
-                <div class="card">Ella</div>
-                <div class="card">Ellos</div>
-                <div class="card">Ellas</div>
-                <div class="card">Ello</div>
-            </div>
+        <div class="card-grid">
+            {% for pronombre in ["yo", "tú", "él", "ella", "nosotros", "vosotros", "ellos"] %}
+            <a href="{{ url_for('mostrar_pronombre', pronombre=pronombre) }}" class="card-link">
+                <div class="card">
+                    <div class="large-pronombre">{{ pronombre }}</div>
+                    <div class="small-pronombre">
+                        {{ pronombre }} - {{ pronombre.lower() }}
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
         </div>
     </main>
 

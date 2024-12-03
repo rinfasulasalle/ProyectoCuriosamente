@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ color | capitalize }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/color.css') }}">
+</head>
+<body>
+    <header>
+        <button class="back-btn" onclick="window.history.back()">←</button>
+        <h1>{{ color | capitalize }}</h1>
+    </header>
+
+    <main>
+        <div class="color-container">
+            <!-- Mostrar el círculo grande con el color seleccionado -->
+            <div class="large-color" style="background-color: {{ color }};"></div>
+            <h2>{{ color | capitalize }}</h2>
+
+            <!-- Video relacionado con el color (en el futuro) -->
+            <div class="video-container">
+                <video id="color-video" autoplay muted loop>
+                    <source src="{{ url_for('static', filename='videos/' + color + '-gesture.mp4') }}" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+        </div>
+    </main>
+
+    <!-- Botón para reproducir el sonido del color en la esquina superior izquierda -->
+    <button id="sound-btn">
+        <img src="{{ url_for('static', filename='images/soundpicture.png') }}" alt="Reproducir sonido">
+    </button>
+
+    <footer>
+        <p>Curiosamente - Elaborado para el curso de Interacción Humano Computador</p>
+    </footer>
+</body>
+</html>

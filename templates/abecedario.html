@@ -16,15 +16,14 @@
     <main>
         <div class="card-grid">
             {% for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" %}
-            <div class="card">
-                <!-- Enlace para cada letra -->
-                <a href="{{ url_for('mostrar_letra', letra=letter) }}">
+            <a href="{{ url_for('mostrar_letra', letra=letter) }}" class="card-link">
+                <div class="card">
                     <div class="large-letter">{{ letter }}</div>
                     <div class="small-letter">
                         {{ letter }} - {{ letter.lower() }}
                     </div>
-                </a>
-            </div>
+                </div>
+            </a>
             {% endfor %}
         </div>
     </main>

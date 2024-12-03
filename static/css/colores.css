@@ -53,6 +53,13 @@ header .logo {
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    background-color: #f7d528;
 }
 
 .color-circle {
@@ -66,12 +73,6 @@ header .logo {
 .card h3 {
     font-size: 1.2em;
     color: #333;
-}
-
-/* Hover Effect for Cards */
-.card:hover {
-    transform: scale(1.1);
-    background-color: #f7d528;
 }
 
 /* Footer */

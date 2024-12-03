@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebidas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bebidas.css') }}">
+</head>
+<body>
+    <header>
+        <button class="back-btn" onclick="window.history.back()">←</button>
+        <h1>Bebidas</h1>
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+    </header>
+
+    <main>
+        <div class="card-grid">
+            {% for bebida in ["agua", "te", "cafe", "gaseosa", "jugo", "chocolate_caliente", "limonada"] %}
+            <a href="{{ url_for('mostrar_bebida', bebida=bebida) }}" class="card-link">
+                <div class="card">
+                    <div class="large-bebida">{{ bebida | capitalize }}</div>
+                    <div class="small-bebida">
+                        {{ bebida | capitalize }}
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+        <p>Curiosamente - Elaborado para el curso de Interacción Humano Computador</p>
+    </footer>
+</body>
+</html>

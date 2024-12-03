@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetales</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vegetales.css') }}">
+</head>
+<body>
+    <header>
+        <button class="back-btn" onclick="window.history.back()">←</button>
+        <h1>Vegetales</h1>
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+    </header>
+
+    <main>
+        <div class="card-grid">
+            {% for vegetal in ["zanahoria", "brocoli", "espinaca", "acelga", "cebolla", "coliflor"] %}
+            <a href="{{ url_for('mostrar_vegetal', vegetal=vegetal) }}" class="card-link">
+                <div class="card">
+                    <div class="large-vegetal">{{ vegetal }}</div>
+                    <div class="small-vegetal">
+                        {{ vegetal }} - {{ vegetal.lower() }}
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+        <p>Curiosamente - Elaborado para el curso de Interacción Humano Computador</p>
+    </footer>
+</body>
+</html>

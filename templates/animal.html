@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ animal | capitalize }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animal.css') }}">
+</head>
+<body>
+    <header>
+        <button class="back-btn" onclick="window.history.back()">←</button>
+        <h1>{{ animal | capitalize }}</h1>
+    </header>
+
+    <main>
+        <div class="animal-container">
+            <!-- Mostrar el nombre del animal -->
+            <div class="large-animal">{{ animal | capitalize }}</div>
+
+            <!-- Video relacionado con el animal -->
+            <div class="video-container">
+                <video id="animal-video" autoplay muted loop>
+                    <source src="{{ url_for('static', filename='videos/' + animal + '-gesture.mp4') }}" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+        </div>
+    </main>
+
+    <!-- Botón para reproducir el sonido del animal -->
+    <button id="sound-btn">
+        <img src="{{ url_for('static', filename='images/soundpicture.png') }}" alt="Reproducir sonido">
+    </button>
+
+    <footer>
+        <p>Curiosamente - Elaborado para el curso de Interacción Humano Computador</p>
+    </footer>
+</body>
+</html>

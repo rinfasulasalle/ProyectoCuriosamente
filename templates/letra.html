@@ -3,31 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Letra {{ letra }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/abecedario.css') }}">
+    <title>{{ letra }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/letra.css') }}">
 </head>
 <body>
     <header>
         <button class="back-btn" onclick="window.history.back()">←</button>
-        <h1>Letra {{ letra }}</h1>
+        <h1>{{ letra }}</h1>
     </header>
 
     <main>
-        <div class="letter-display">
-            <!-- Mostrar la letra en grande -->
+        <div class="letter-container">
             <div class="large-letter">{{ letra }}</div>
             
             <!-- Video relacionado con la letra -->
             <div class="video-container">
-                <video controls autoplay>
-                    <source src="{{ video_url }}" type="video/mp4">
-                    Tu navegador no soporta el video.
+                <video id="letter-video" autoplay muted loop>
+                    <source src="{{ url_for('static', filename='videos/' + letra + '-gesture.mp4') }}" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
                 </video>
             </div>
 
             <!-- Botón para reproducir el sonido de la letra -->
-            <button class="sound-btn" onclick="playSound('{{ sound_url }}')">
-                🔊 Reproducir sonido
+            <button id="sound-btn">
+                <img src="{{ url_for('static', filename='images/soundpicture.png') }}" alt="Reproducir sonido">
             </button>
         </div>
     </main>
@@ -37,10 +36,11 @@
     </footer>
 
     <script>
-        function playSound(url) {
-            const audio = new Audio(url);
+        // Reproducir el sonido al hacer clic en el icono
+        document.getElementById('sound-btn').addEventListener('click', function() {
+            let audio = new Audio("{{ url_for('static', filename='sounds/' + letra + '.mp3') }}");
             audio.play();
-        }
+        });
     </script>
 </body>
 </html>

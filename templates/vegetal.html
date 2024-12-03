@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ vegetal }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vegetal.css') }}">
+</head>
+<body>
+    <header>
+        <button class="back-btn" onclick="window.history.back()">←</button>
+        <h1>{{ vegetal }}</h1>
+    </header>
+
+    <main>
+        <div class="vegetal-container">
+            <div class="large-vegetal">{{ vegetal }}</div>
+            
+            <!-- Video relacionado con el vegetal -->
+            <div class="video-container">
+                <video id="vegetal-video" autoplay muted loop>
+                    <source src="{{ url_for('static', filename='videos/' + vegetal + '-gesture.mp4') }}" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+
+            <!-- Botón para reproducir el sonido del vegetal -->
+            <button id="sound-btn">
+                <img src="{{ url_for('static', filename='images/soundpicture.png') }}" alt="Reproducir sonido">
+            </button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Curiosamente - Elaborado para el curso de Interacción Humano Computador</p>
+    </footer>
+</body>
+</html>

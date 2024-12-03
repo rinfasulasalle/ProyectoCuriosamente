@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insectos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/insectos.css') }}">
+</head>
+<body>
+    <header>
+        <button class="back-btn" onclick="window.history.back()">←</button>
+        <h1>Insectos</h1>
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+    </header>
+
+    <main>
+        <div class="card-grid">
+            {% for insecto in ["abeja", "araña", "caracol", "grillo", "gusano", "hormiga", "mariposa", "mosca", "polilla", "pulga"] %}
+            <a href="{{ url_for('mostrar_insecto', insecto=insecto) }}" class="card-link">
+                <div class="card">
+                    <div class="large-insecto">{{ insecto }}</div>
+                    <div class="small-insecto">
+                        {{ insecto }} - {{ insecto.lower() }}
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+        <p>Curiosamente - Elaborado para el curso de Interacción Humano Computador</p>
+    </footer>
+</body>
+</html>

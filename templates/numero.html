@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ numero }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/numero.css') }}">
+</head>
+<body>
+    <header>
+        <button class="back-btn" onclick="window.history.back()">←</button>
+        <h1>{{ numero }}</h1>
+    </header>
+
+    <main>
+        <div class="number-container">
+            <!-- Círculo con el número -->
+            <div class="large-number">{{ numero }}</div>
+            
+            <!-- Video relacionado con el número -->
+            <div class="video-container">
+                <video id="number-video" autoplay muted loop>
+                    <source src="{{ url_for('static', filename='videos/' + numero|string + '-gesture.mp4') }}" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+
+            <!-- Botón para reproducir el sonido del número -->
+            <button id="sound-btn">
+                <img src="{{ url_for('static', filename='images/soundpicture.png') }}" alt="Reproducir sonido">
+            </button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Curiosamente - Elaborado para el curso de Interacción Humano Computador</p>
+    </footer>
+</body>
+</html>

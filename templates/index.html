@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curiosamente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script>
-        setTimeout(() => {
-            window.location.href = "{{ url_for('home') }}";
-        }, 2000);
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.addEventListener('click', () => {
+                window.location.href = "{{ url_for('home') }}";
+            });
+        });
     </script>
 </head>
 <body>
     <div class="container">
-        <h1>Curiosamente</h1>
-        <p>"Sin barreras"</p>
+        <h1 class="animated-title">Curiosamente</h1>
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo Curiosamente" class="logo">
+        <p class="animated-text">"Sin barreras"</p>
     </div>
 </body>
 </html>
