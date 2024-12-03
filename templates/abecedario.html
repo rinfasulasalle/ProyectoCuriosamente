@@ -9,7 +9,7 @@
 <body>
     <header>
         <button class="back-btn" onclick="window.history.back()">←</button>
-        <h1>Abecedariop</h1>
+        <h1>Abecedario</h1>
         <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
     </header>
 
@@ -17,10 +17,13 @@
         <div class="card-grid">
             {% for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" %}
             <div class="card">
-                <div class="large-letter">{{ letter }}</div>
-                <div class="small-letter">
-                    {{ letter }} - {{ letter.lower() }}
-                </div>
+                <!-- Enlace para cada letra -->
+                <a href="{{ url_for('mostrar_letra', letra=letter) }}">
+                    <div class="large-letter">{{ letter }}</div>
+                    <div class="small-letter">
+                        {{ letter }} - {{ letter.lower() }}
+                    </div>
+                </a>
             </div>
             {% endfor %}
         </div>
